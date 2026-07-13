@@ -353,6 +353,117 @@ img {
   gap: 10px;
 }
 
+.hero-profile {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+  max-width: 455px;
+}
+
+.portrait-card {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  position: relative;
+  min-width: 0;
+  height: clamp(340px, 32vw, 440px);
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(240, 176, 113, 0.2), rgba(15, 96, 120, 0.28)),
+    #102820;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.34);
+  transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transition: transform 160ms ease, box-shadow 180ms ease;
+}
+
+.portrait-card::before,
+.portrait-card::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+}
+
+.portrait-card::before {
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(4, 16, 13, 0) 42%, rgba(4, 16, 13, 0.84) 100%),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.18), transparent 34%);
+}
+
+.portrait-card::after {
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: inherit;
+}
+
+.portrait-card:hover {
+  box-shadow: 0 34px 100px rgba(0, 0, 0, 0.4);
+}
+
+.portrait-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  filter: saturate(1.03) contrast(1.04);
+  transform: scale(1.01);
+  transition: transform 260ms ease;
+}
+
+.portrait-card:hover img {
+  transform: scale(1.045);
+}
+
+.portrait-card figcaption {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  left: 14px;
+  z-index: 3;
+  display: grid;
+  gap: 4px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius);
+  background: rgba(5, 20, 16, 0.84);
+  color: #fffdf7;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.26);
+  backdrop-filter: blur(14px);
+}
+
+.portrait-card figcaption span {
+  color: #f7bf82;
+  font-size: 0.74rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.portrait-card figcaption strong {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 750;
+  line-height: 1.04;
+}
+
+.portrait-card figcaption p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.hero-profile .impact-console {
+  gap: 14px;
+  padding: 18px;
+}
+
+.hero-profile .console-output {
+  min-height: 132px;
+}
+
 .impact-console {
   --tilt-x: 0deg;
   --tilt-y: 0deg;
@@ -1147,6 +1258,16 @@ img {
     min-height: auto;
   }
 
+  .hero-profile {
+    width: 100%;
+    max-width: 620px;
+    justify-self: center;
+  }
+
+  .portrait-card {
+    height: min(520px, 70vw);
+  }
+
   .hero h1 {
     font-size: 4.8rem;
   }
@@ -1224,6 +1345,7 @@ img {
   }
 
   .hero-copy,
+  .hero-profile,
   .impact-console,
   .impact-intro,
   .impact-strip article,
@@ -1272,6 +1394,7 @@ img {
   }
 
   .impact-console,
+  .portrait-card figcaption,
   .impact-intro,
   .impact-strip article,
   .contact-panel,
@@ -1335,6 +1458,7 @@ img {
 
 @media (max-width: 520px) {
   .hero-copy,
+  .hero-profile,
   .impact-console,
   .impact-intro,
   .impact-strip article,
@@ -1370,6 +1494,14 @@ img {
 
   .hero h1 {
     font-size: 2rem;
+  }
+
+  .portrait-card {
+    height: min(430px, 112vw);
+  }
+
+  .portrait-card figcaption strong {
+    font-size: 1.24rem;
   }
 
   .section-head h2,
