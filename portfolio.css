@@ -603,7 +603,7 @@ img {
     var(--white);
 }
 
-.impact-strip strong,
+.impact-strip article strong,
 .journey-item h3,
 .proof-grid strong,
 .builder-readout strong,
@@ -617,14 +617,14 @@ img {
   overflow-wrap: anywhere;
 }
 
-.impact-strip strong {
+.impact-strip article strong {
   max-width: 560px;
   color: var(--ink);
   font-size: 1.45rem;
   line-height: 1.18;
 }
 
-.impact-strip p,
+.impact-strip article p,
 .journey-item p,
 .proof-grid p,
 .builder-readout p,
@@ -636,7 +636,7 @@ img {
   line-height: 1.66;
 }
 
-.impact-strip p {
+.impact-strip article p {
   max-width: 620px;
   color: #384a43;
   font-size: 1.02rem;
@@ -644,7 +644,7 @@ img {
 
 .impact-strip .impact-intro strong {
   max-width: 760px;
-  color: #fffdf7;
+  color: #fffdf7 !important;
   font-size: 3.25rem;
   line-height: 1;
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.42);
@@ -652,7 +652,7 @@ img {
 
 .impact-strip .impact-intro p {
   max-width: 900px;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 0.94) !important;
   font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.72;
@@ -916,30 +916,88 @@ img {
 }
 
 .contact-section {
+  position: relative;
+  isolation: isolate;
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
-  gap: 28px;
-  align-items: start;
+  grid-template-columns: minmax(320px, 0.9fr) minmax(360px, 0.82fr);
+  gap: 22px;
+  align-items: stretch;
   width: 100%;
   max-width: 100vw;
-  padding: 92px max(18px, calc((100% - 1180px) / 2));
+  padding: 58px max(18px, calc((100% - 1180px) / 2));
+  overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.96), rgba(238, 245, 239, 0.9)),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.98), rgba(238, 245, 239, 0.93)),
     var(--paper);
 }
 
+.contact-section::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    repeating-linear-gradient(125deg, rgba(15, 96, 120, 0.045) 0 1px, transparent 1px 34px),
+    linear-gradient(90deg, transparent 0 58%, rgba(31, 122, 83, 0.08) 58% 100%);
+  content: "";
+  pointer-events: none;
+}
+
+.contact-section::after {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 5px;
+  background: linear-gradient(90deg, var(--leaf), var(--water), var(--clay));
+  content: "";
+}
+
 .contact-copy {
+  display: grid;
+  gap: 16px;
+  align-content: center;
+  max-width: 640px;
+}
+
+.contact-copy h2 {
+  font-size: 3.35rem;
+  line-height: 1.02;
+}
+
+.contact-copy p:not(.eyebrow) {
   max-width: 620px;
+  color: #33463e;
+  font-size: 1.04rem;
+}
+
+.contact-panel {
+  display: grid;
+  gap: 14px;
+  align-content: center;
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid rgba(20, 33, 29, 0.12);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(239, 247, 240, 0.86)),
+    rgba(255, 255, 255, 0.78);
+  box-shadow: 0 18px 42px rgba(20, 33, 29, 0.1);
 }
 
 .contact-actions {
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(150px, 0.8fr);
   gap: 10px;
   min-width: 0;
 }
 
+.contact-actions .button {
+  min-height: 56px;
+}
+
+.contact-actions .button:first-child {
+  grid-column: 1 / -1;
+}
+
 .contact-list {
-  grid-column: 2;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
@@ -950,7 +1008,7 @@ img {
   padding: 14px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .contact-list dd {
@@ -1175,6 +1233,7 @@ img {
   .proof-grid,
   .contact-actions,
   .contact-list,
+  .contact-panel,
   .capability-marquee,
   .playbook-panel,
   .focus-builder,
@@ -1203,7 +1262,7 @@ img {
   }
 
   .impact-strip .impact-intro p,
-  .impact-strip p {
+  .impact-strip article p {
     font-size: 1rem;
   }
 
@@ -1215,6 +1274,7 @@ img {
   .impact-console,
   .impact-intro,
   .impact-strip article,
+  .contact-panel,
   .playbook-panel,
   .focus-builder,
   .journey-item,
@@ -1249,6 +1309,10 @@ img {
     width: 100%;
   }
 
+  .contact-actions {
+    grid-template-columns: 1fr;
+  }
+
   .button {
     min-height: 46px;
     padding-inline: 14px;
@@ -1280,6 +1344,7 @@ img {
   .proof-grid,
   .contact-actions,
   .contact-list,
+  .contact-panel,
   .capability-marquee,
   .playbook-panel,
   .focus-builder,
