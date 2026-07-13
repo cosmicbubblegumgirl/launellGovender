@@ -2,26 +2,26 @@
   const consoleContent = {
     retention: {
       label: "Retention",
-      title: "Customer relationships stay warm because follow-up is deliberate.",
-      text: "Regular visits, satisfaction checks, issue resolution, and internal coordination keep important accounts from drifting.",
+      title: "I keep customer relationships warm through deliberate follow-up.",
+      text: "I use regular visits, satisfaction checks, issue resolution, and internal coordination to keep important accounts from drifting.",
       track: 25
     },
     revenue: {
       label: "Revenue",
-      title: "Commercial pressure becomes a managed rhythm.",
-      text: "Monthly KPIs, price adjustments, quotations, proposals and contract details are kept visible, current and accountable.",
+      title: "I turn commercial pressure into a managed rhythm.",
+      text: "I keep monthly KPIs, price adjustments, quotations, proposals and contract details visible, current and accountable.",
       track: 50
     },
     tenders: {
       label: "Tenders",
-      title: "Paperwork becomes a customer-confidence signal.",
-      text: "Tender packs, CRM records, data sheets, job cards, labels and service codes are followed through with detail.",
+      title: "I make paperwork a customer-confidence signal.",
+      text: "I follow through on tender packs, CRM records, data sheets, job cards, labels and service codes with detail.",
       track: 75
     },
     service: {
       label: "Service",
-      title: "The customer gets one steady point of care.",
-      text: "She connects sales, technical, customer care, site management and service teams around what the account needs next.",
+      title: "I give the customer one steady point of care.",
+      text: "I connect sales, technical, customer care, site management and service teams around what the account needs next.",
       track: 100
     }
   };
@@ -29,23 +29,23 @@
   const playbookContent = {
     listen: {
       label: "Listen",
-      title: "Start with customer needs and account context.",
-      text: "She identifies customer needs, service requirements, recurring queries, satisfaction risks, and the internal teams needed to resolve them."
+      title: "I start with customer needs and account context.",
+      text: "I identify customer needs, service requirements, recurring queries, satisfaction risks, and the internal teams needed to resolve them."
     },
     price: {
       label: "Price",
-      title: "Turn requirements into accurate commercial action.",
-      text: "Pricing, quotations, increases, proposals, tender packs, and contract maintenance are handled with careful follow-up and database accuracy."
+      title: "I turn requirements into accurate commercial action.",
+      text: "I handle pricing, quotations, increases, proposals, tender packs, and contract maintenance with careful follow-up and database accuracy."
     },
     coordinate: {
       label: "Coordinate",
-      title: "Keep service delivery connected across teams.",
-      text: "She links customers with technical sales, customer care, site management, service teams, data sheets, job cards, labels, and safe-disposal documentation."
+      title: "I keep service delivery connected across teams.",
+      text: "I link customers with technical sales, customer care, site management, service teams, data sheets, job cards, labels, and safe-disposal documentation."
     },
     retain: {
       label: "Retain",
-      title: "Protect the account through consistent follow-through.",
-      text: "Retention comes from regular visits, proactive communication, satisfaction checks, issue resolution, SLA attention, and a clear record of what happens next."
+      title: "I protect the account through consistent follow-through.",
+      text: "I build retention through regular visits, proactive communication, satisfaction checks, issue resolution, SLA attention, and a clear record of what happens next."
     }
   };
 
@@ -53,22 +53,22 @@
     "key-account": {
       label: "Current focus",
       title: "Key account consulting",
-      text: "Owns client retention, monthly KPIs, SLA follow-up, price adjustments, quotations, CRM records, tender submissions, and account conversations for important customers."
+      text: "I own client retention, monthly KPIs, SLA follow-up, price adjustments, quotations, CRM records, tender submissions, and account conversations for important customers."
     },
     sales: {
       label: "Sales consulting",
       title: "Account maintenance and commercial delivery",
-      text: "Maintained customer accounts, prepared pricing and tenders, managed contract updates, followed data sheets, and supported improved service delivery."
+      text: "I maintained customer accounts, prepared pricing and tenders, managed contract updates, followed data sheets, and supported improved service delivery."
     },
     technical: {
       label: "Technical sales support",
       title: "Service documentation and customer coordination",
-      text: "Coordinated safe-disposal certificates, service codes, job cards, labels, quotations, proposals, data sheets, carryover notifications, and department support."
+      text: "I coordinated safe-disposal certificates, service codes, job cards, labels, quotations, proposals, data sheets, carryover notifications, and department support."
     },
     admin: {
       label: "Foundation",
       title: "Sales administration discipline",
-      text: "Built the administrative base through client calls, service messages, quotation capture, service code follow-up, job cards, labels, and dependable customer support."
+      text: "I built my administrative base through client calls, service messages, quotation capture, service code follow-up, job cards, labels, and dependable customer support."
     }
   };
 
@@ -257,7 +257,7 @@
           ? "Balanced key account profile"
           : "Focused account strength";
       summary.textContent = selected.length
-        ? `Launell's portfolio currently highlights ${formatList(selected)}.`
+        ? `My portfolio currently highlights ${formatList(selected)}.`
         : "Choose a focus area to shape the account story.";
     };
 
